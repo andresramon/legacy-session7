@@ -13,7 +13,7 @@ public class Product : Aggregate<ProductData>
         _code = code;
         _productPrice = price;
     }
-    
+
     public Product(Id id):base(id)
     {
     }
@@ -29,12 +29,12 @@ public class Product : Aggregate<ProductData>
         _code = data.ProductCode;
         _productPrice = data.ProductPrice;
     }
-    
 
     public static IEnumerable<ProductData> GetListOfProductsData(IEnumerable<Product> products)
     {
       return products.Select(product => new ProductData(product.Id,product._code,product._productPrice));
     }
+
     public static IEnumerable<Product> GetListOfProducts(IEnumerable<ProductData> products)
     {
         return products.Select(product => new Product(product.Id,product.ProductCode,product.ProductPrice));

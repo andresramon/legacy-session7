@@ -13,5 +13,4 @@ public record Id
     {
         _guid = Guid.NewGuid();
     }
-   
 }

@@ -7,8 +7,7 @@ public class ShoppingCartController
 {
     private readonly CreateEmptyCartUseCase _emptyCartUseCase;
     private readonly AddProductToCartUseCase _addProductToCart;
-    
-    
+
     public ShoppingCartController(
         CreateEmptyCartUseCase cartUseCase,
         AddProductToCartUseCase addProductToCart)
@@ -25,5 +24,5 @@ public class ShoppingCartController
     {
         _addProductToCart.AddProduct(shoppingCartId, productCode);
     }
-  
+
 }

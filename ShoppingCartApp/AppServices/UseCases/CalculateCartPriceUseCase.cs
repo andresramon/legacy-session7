@@ -18,12 +18,11 @@ public class CalculateCartPriceUseCase
 
     public decimal CalculateCartTotal(Id shoppingCartId)
     {
-        
         var products = _cartQueries.getProductsFromCart(shoppingCartId);
 
         if (products.Count == 0)
             throw new ShoppingCartNotFound();
-        
+
         return _priceAppService.CalculateCart(products);
     }
 }

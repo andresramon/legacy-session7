@@ -7,12 +7,11 @@ public class Customer : Aggregate<CustomerData>
 {
     private string _name;
 
-    
     public Customer(string name):base(new Id(Guid.NewGuid()))
     {
         _name = name;
     }
-   
+
     public override CustomerData ToData()
     {
         return new CustomerData(Id, _name);

@@ -6,9 +6,8 @@ namespace ShoppingCartApp.Domain.Entities;
 public class ShoppingCart : Aggregate<ShoppingCartData>
 {
     private readonly Customer _customer;
-    private readonly List<Product> _products; 
-    
-    
+    private readonly List<Product> _products;
+
     public ShoppingCart(Customer customer) : this(new Id(),customer)
     {
     }
@@ -25,9 +24,10 @@ public class ShoppingCart : Aggregate<ShoppingCartData>
         {
             throw new ArgumentNullException();
         }
+
         _products.Add(product);
     }
-    
+
     public override ShoppingCartData ToData()
     {
         return new ShoppingCartData(Id,
@@ -35,10 +35,9 @@ public class ShoppingCart : Aggregate<ShoppingCartData>
            Product.GetListOfProductsData(_products));
     }
 
-   
+
     public override void Restore(ShoppingCartData data)
     {
-        
         Id = data.Id;
         _customer.Restore(data.Customer);
         _products.AddRange( Product.GetListOfProducts(data.Products));

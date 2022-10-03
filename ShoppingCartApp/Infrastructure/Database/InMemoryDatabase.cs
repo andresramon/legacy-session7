@@ -2,7 +2,6 @@ using ShoppingCartApp.Domain.Entities.Data;
 
 namespace ShoppingCartApp.Infrastructure.Database;
 
-
 public class InMemoryDatabase
 {
     public List<ProductData> Products { get; } = new();

@@ -12,12 +12,13 @@ public class CustomerRepository : ICustomerRepository
     {
         _database = database;
     }
+
     public Customer GetUserByName(string name)
     {
         var customer = new Customer(name);
-        
+
         customer.Restore(_database.Customers.Single(c => c.Name==name));
-        
+
         return customer;
     }
 }

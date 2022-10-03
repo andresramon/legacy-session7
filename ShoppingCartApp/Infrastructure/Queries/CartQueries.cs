@@ -17,6 +17,5 @@ public class CartQueries : ICartQueries
     {
         var cart = _database.ShoppingCarts.Single(cart => cart.Id == shoppingCartId);
         return cart.Products.Select(p => new CartProduct(p.ProductCode, p.ProductPrice)).ToList();
-        
     }
 }

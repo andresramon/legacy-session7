@@ -13,6 +13,7 @@ public class ShoppingCartRepository : IShoppingCartRepository
     {
         _database = database;
     }
+
     public void Add(ShoppingCart cart)
     {
         _database.ShoppingCarts.Add(cart.ToData());
@@ -22,9 +23,9 @@ public class ShoppingCartRepository : IShoppingCartRepository
     {
         var shoppingCartData = _database.ShoppingCarts.Single(cart => cart.Id == shoppingCartId);
         var shoppingCart = new ShoppingCart(new Customer("empty"));
-        
+
         shoppingCart.Restore(shoppingCartData);
-        
+
         return shoppingCart;
     }
 

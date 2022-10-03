@@ -18,15 +18,15 @@ public class RealShoppingCartSteps
     private InMemoryDatabase _database;
     private Id _shoppingCartId = new Id();
     private decimal _cartPrice;
-    
+
     public RealShoppingCartSteps()
     {
         _database = InitializeDatabase();
-        
+
         var emptyCartUseCase = new CreateEmptyCartUseCase(new ShoppingCartRepository(_database), new CustomerRepository(_database));
         var addProductToCart = new AddProductToCartUseCase(new ShoppingCartRepository(_database), new ProductRepository(_database));
-        
-        _shoppingCartController = new ShoppingCartController(emptyCartUseCase,addProductToCart);
+
+        _shoppingCartController = new ShoppingCartController(emptyCartUseCase, addProductToCart);
 
         _checkOutController = new CheckOutController(new CalculateCartPriceUseCase(new CartPriceService(), new CartQueries(_database)));
     }
@@ -34,12 +34,12 @@ public class RealShoppingCartSteps
     private static InMemoryDatabase InitializeDatabase()
     {
         var inMemoryDatabase = new InMemoryDatabase();
-        
+
         inMemoryDatabase.Customers.Add(new CustomerData(new Id(),"John"));
         inMemoryDatabase.Products.Add(new ProductData(new Id(),"VOUCHER",new decimal(5)));
         inMemoryDatabase.Products.Add(new ProductData(new Id(),"T-SHIRT",new decimal(20)));
         inMemoryDatabase.Products.Add(new ProductData(new Id(),"MUG",new decimal(7.5)));
-        
+
         return inMemoryDatabase;
     }
 
@@ -52,7 +52,7 @@ public class RealShoppingCartSteps
     [Given(@"John adds a ""(.*)""")]
     public void GivenJohnAddsA(string product)
     {
-       _shoppingCartController.AddProduct(_shoppingCartId,product);
+       _shoppingCartController.AddProduct(_shoppingCartId, product);
     }
 
     [When(@"John requests cart price")]

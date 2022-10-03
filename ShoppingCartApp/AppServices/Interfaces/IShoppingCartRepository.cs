@@ -5,7 +5,7 @@ namespace ShoppingCartApp.AppServices.Interfaces;
 
 public interface IShoppingCartRepository
 {
-    public void Add(ShoppingCart cart);
+    public void Create(ShoppingCart cart);
     ShoppingCart Get(Id id);
     void Save(ShoppingCart shoppingCart);
 }

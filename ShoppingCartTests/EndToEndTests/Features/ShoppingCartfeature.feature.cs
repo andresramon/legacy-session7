@@ -40,21 +40,21 @@ namespace ShoppingCartTests.EndToEndTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EndToEndTests/Features", "ShoppingCart", @"The shopping cart should allow the typical scenarios including creating a cart, 
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EndToEndTests/Features", "ShoppingCart", @"The shopping cart should allow the typical scenarios including creating a cart,
 adding products and calculating price. All scenarios will assume that the following items exist:
-	
+
 In the product repository
 Code         | Name                     |  Price
 --------------------------------------------------
 VOUCHER      | AcME Voucher             |   5.00 €
 T-SHIRT      | AcME T-Shirt             |  20.00 €
 MUG          | AcME Coffee Mug          |   7.50 €
-	
+
 In the user repository
-	
-Name       
+
+Name
 --------------------------------------------------
-John ", ProgrammingLanguage.CSharp, ((string[])(null)));
+John", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -105,7 +105,7 @@ John ", ProgrammingLanguage.CSharp, ((string[])(null)));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create shopping cart with multiple products", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 19
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -125,22 +125,22 @@ John ", ProgrammingLanguage.CSharp, ((string[])(null)));
             {
                 this.ScenarioStart();
 #line 20
-        testRunner.Given("that a John has an empty shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("that a John has an empty shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 21
-        testRunner.And("John adds a \"VOUCHER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("John adds a \"VOUCHER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-        testRunner.And("John adds a \"T-SHIRT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("John adds a \"T-SHIRT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
-        testRunner.And("John adds a \"MUG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("John adds a \"MUG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
-        testRunner.When("John requests cart price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("John requests cart price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-        testRunner.Then("John\'s shopping cart total should be 32.5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("John\'s shopping cart total should be 32.5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

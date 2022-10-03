@@ -14,7 +14,7 @@ public class ShoppingCartRepository : IShoppingCartRepository
         _database = database;
     }
 
-    public void Add(ShoppingCart cart)
+    public void Create(ShoppingCart cart)
     {
         _database.ShoppingCarts.Add(cart.ToData());
     }

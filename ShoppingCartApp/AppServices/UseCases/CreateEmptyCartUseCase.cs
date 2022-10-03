@@ -27,7 +27,7 @@ public class CreateEmptyCartUseCase
         
         var cart = new ShoppingCart(customer);
 
-        _shoppingCartRepository.Add(cart);
+        _shoppingCartRepository.Create(cart);
         
         return cart.Id;
     }

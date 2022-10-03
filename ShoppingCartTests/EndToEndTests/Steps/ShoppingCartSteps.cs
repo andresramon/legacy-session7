@@ -15,8 +15,6 @@ public class RealShoppingCartSteps
         _client.BaseAddress = new Uri("http://localhost:5000");
     }
 
-   
-
     [Given(@"that a John has an empty shopping cart")]
     public async Task GivenThatAJohnHasAnEmptyShoppingCart()
     {

@@ -1,8 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartApp", "ShoppingCartApp\ShoppingCartApp.csproj", "{13CF7DF4-A337-491B-B268-9DBAB8202E3E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartTests", "ShoppingCartTests\ShoppingCartTests.csproj", "{9969B0AF-DD72-43B3-96BD-DC94E907FF4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{9A0CCBD0-6A3D-4D23-BF1C-B906F922B749}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartApi", "ShoppingCartApi\ShoppingCartApi.csproj", "{A83E0B7D-62DD-4139-AED0-CAC1D42D19DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +12,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{13CF7DF4-A337-491B-B268-9DBAB8202E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13CF7DF4-A337-491B-B268-9DBAB8202E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13CF7DF4-A337-491B-B268-9DBAB8202E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13CF7DF4-A337-491B-B268-9DBAB8202E3E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9969B0AF-DD72-43B3-96BD-DC94E907FF4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9969B0AF-DD72-43B3-96BD-DC94E907FF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9969B0AF-DD72-43B3-96BD-DC94E907FF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9969B0AF-DD72-43B3-96BD-DC94E907FF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0CCBD0-6A3D-4D23-BF1C-B906F922B749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0CCBD0-6A3D-4D23-BF1C-B906F922B749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0CCBD0-6A3D-4D23-BF1C-B906F922B749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0CCBD0-6A3D-4D23-BF1C-B906F922B749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83E0B7D-62DD-4139-AED0-CAC1D42D19DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83E0B7D-62DD-4139-AED0-CAC1D42D19DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83E0B7D-62DD-4139-AED0-CAC1D42D19DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83E0B7D-62DD-4139-AED0-CAC1D42D19DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

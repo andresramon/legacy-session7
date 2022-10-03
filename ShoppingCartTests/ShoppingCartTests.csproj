@@ -12,6 +12,7 @@
 
     <ItemGroup>
         <PackageReference Include="FakeItEasy" Version="7.3.1" />
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
         <PackageReference Include="Moq" Version="4.18.2" />
         <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
@@ -25,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ShoppingCartApp\ShoppingCartApp.csproj" />
+      <ProjectReference Include="..\ShoppingCartApi\ShoppingCartApi.csproj" />
     </ItemGroup>
 
 </Project>

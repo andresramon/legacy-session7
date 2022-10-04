@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace ShoppingCartTests.EndToEndTests.Features
+namespace ShoppingCartTests.AcceptanceTests.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace ShoppingCartTests.EndToEndTests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ShoppingCartFeature : object, Xunit.IClassFixture<ShoppingCartFeature.FixtureData>, System.IDisposable
+    public partial class CreateCartAndAddProductFeature : object, Xunit.IClassFixture<CreateCartAndAddProductFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace ShoppingCartTests.EndToEndTests.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "ShoppingCart.feature"
+#line 1 "CreateCartAndAddProduct.feature"
 #line hidden
         
-        public ShoppingCartFeature(ShoppingCartFeature.FixtureData fixtureData, ShoppingCartTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CreateCartAndAddProductFeature(CreateCartAndAddProductFeature.FixtureData fixtureData, ShoppingCartTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace ShoppingCartTests.EndToEndTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EndToEndTests/Features", "ShoppingCart", @"The shopping cart should allow the typical scenarios including creating a cart,
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AcceptanceTests/Features", "CreateCartAndAddProduct", @"The shopping cart should allow the typical scenarios including creating a cart,
 adding products and calculating price. All scenarios will assume that the following items exist:
 
 In the product repository
@@ -94,17 +94,17 @@ John", ProgrammingLanguage.CSharp, ((string[])(null)));
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Create shopping cart with multiple products")]
-        [Xunit.TraitAttribute("FeatureTitle", "ShoppingCart")]
-        [Xunit.TraitAttribute("Description", "Create shopping cart with multiple products")]
-        [Xunit.TraitAttribute("Category", "EndToEnd")]
-        public virtual void CreateShoppingCartWithMultipleProducts()
+        [Xunit.SkippableFactAttribute(DisplayName="Create cart and add product")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCartAndAddProduct")]
+        [Xunit.TraitAttribute("Description", "Create cart and add product")]
+        [Xunit.TraitAttribute("Category", "AcceptanceTest")]
+        public virtual void CreateCartAndAddProduct()
         {
             string[] tagsOfScenario = new string[] {
-                    "EndToEnd"};
+                    "AcceptanceTest"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create shopping cart with multiple products", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 19
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create cart and add product", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -124,23 +124,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
-    testRunner.Given("that a John has an empty shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 21
-    testRunner.And("John adds a \"VOUCHER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("a empty shopping cart belonging to \"John\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 22
-    testRunner.And("John adds a \"T-SHIRT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("we add a Voucher", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-    testRunner.And("John adds a \"MUG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 24
-    testRunner.When("John requests cart price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 25
-    testRunner.Then("John\'s shopping cart total should be 32.5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the shopping cart price should be 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -153,12 +144,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ShoppingCartFeature.FeatureSetup();
+                CreateCartAndAddProductFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ShoppingCartFeature.FeatureTearDown();
+                CreateCartAndAddProductFeature.FeatureTearDown();
             }
         }
     }

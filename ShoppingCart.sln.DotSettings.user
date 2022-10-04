@@ -5,4 +5,11 @@
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5bfc7e92_002D9ef8_002D4d3f_002D8bbf_002D3271dcc4e61d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;ShoppingCartTests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fc4fe214_002Ddd8b_002D4771_002Dbdcf_002D3e0e1c5ac630/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShoppingCartFeature" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::9969B0AF-DD72-43B3-96BD-DC94E907FF4F::net6.0::ShoppingCartTests.EndToEndTests.Features.ShoppingCartFeature&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9969B0AF-DD72-43B3-96BD-DC94E907FF4F::net6.0::ShoppingCartTests.AcceptanceTests.Features.CreateCartAndAddProductFeature.CreateCartAndAddProduct&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9969B0AF-DD72-43B3-96BD-DC94E907FF4F::net6.0::ShoppingCartTests.AcceptanceTests.Features.CreateCartAndAddProductFeature&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

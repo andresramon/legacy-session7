@@ -1,21 +1,22 @@
 using ShoppingCartApi.Domain.Entities.Data;
 
-namespace ShoppingCartApi.Domain.Entities.Base;
-
-public abstract class Aggregate<DataType> where DataType : EntityData
+namespace ShoppingCartApi.Domain.Entities.Base
 {
-    public Id Id;
-
-    protected Aggregate(Id id)
+    public abstract class Aggregate<DataType> where DataType : EntityData
     {
-        Id = id;
-    }
+        public Id Id;
 
-    public abstract DataType ToData();
-    public abstract  void Restore(DataType data);
+        protected Aggregate(Id id)
+        {
+            Id = id;
+        }
+
+        public abstract DataType ToData();
+        public abstract  void Restore(DataType data);
   
-    private bool Equals(Aggregate<DataType> other) 
-    {
-        return this.ToData() == other.ToData();
+        private bool Equals(Aggregate<DataType> other) 
+        {
+            return this.ToData() == other.ToData();
+        }
     }
 }

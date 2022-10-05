@@ -1,25 +1,26 @@
 using ShoppingCartApi.Domain.Entities.Base;
 using ShoppingCartApi.Domain.Entities.Data;
 
-namespace ShoppingCartApi.Domain.Entities;
-
-public class Customer : Aggregate<CustomerData>
+namespace ShoppingCartApi.Domain.Entities
 {
-    private string _name;
-
-    public Customer(string name):base(new Id(Guid.NewGuid()))
+    public class Customer : Aggregate<CustomerData>
     {
-        _name = name;
-    }
+        private string _name;
 
-    public override CustomerData ToData()
-    {
-        return new CustomerData(Id, _name);
-    }
+        public Customer(string name):base(new Id(Guid.NewGuid()))
+        {
+            _name = name;
+        }
 
-    public override void Restore(CustomerData data)
-    {
-        Id = data.Id;
-        _name = data.Name;
+        public override CustomerData ToData()
+        {
+            return new CustomerData(Id, _name);
+        }
+
+        public override void Restore(CustomerData data)
+        {
+            Id = data.Id;
+            _name = data.Name;
+        }
     }
 }

@@ -3,32 +3,33 @@ using ShoppingCartApi.AppServices.UseCases.Exceptions;
 using ShoppingCartApi.Domain.Entities;
 using ShoppingCartApi.Domain.Entities.Base;
 
-namespace ShoppingCartApi.AppServices.UseCases;
-
-public class CreateEmptyCartUseCase
+namespace ShoppingCartApi.AppServices.UseCases
 {
-    private readonly IShoppingCartRepository _shoppingCartRepository;
-    private readonly ICustomerRepository _customerRepository;
-
-    public CreateEmptyCartUseCase(IShoppingCartRepository shoppingCartShoppingCartRepository, ICustomerRepository customerRepository)
+    public class CreateEmptyCartUseCase
     {
-        _shoppingCartRepository = shoppingCartShoppingCartRepository;
-        _customerRepository = customerRepository;
-    }
+        private readonly IShoppingCartRepository _shoppingCartRepository;
+        private readonly ICustomerRepository _customerRepository;
 
-    public Id CreateFor(string customerName)
-    {
-        var customer = _customerRepository.GetUserByName(customerName);
-        
-        if (customer == null)
+        public CreateEmptyCartUseCase(IShoppingCartRepository shoppingCartShoppingCartRepository, ICustomerRepository customerRepository)
         {
-            throw new CustomerNotFound();
+            _shoppingCartRepository = shoppingCartShoppingCartRepository;
+            _customerRepository = customerRepository;
         }
-        
-        var cart = new ShoppingCart(customer);
 
-        _shoppingCartRepository.Create(cart);
+        public Id CreateFor(string customerName)
+        {
+            var customer = _customerRepository.GetUserByName(customerName);
         
-        return cart.Id;
+            if (customer == null)
+            {
+                throw new CustomerNotFound();
+            }
+        
+            var cart = new ShoppingCart(customer);
+
+            _shoppingCartRepository.Create(cart);
+        
+            return cart.Id;
+        }
     }
 }

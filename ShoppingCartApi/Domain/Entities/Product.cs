@@ -1,42 +1,43 @@
 using ShoppingCartApi.Domain.Entities.Base;
 using ShoppingCartApi.Domain.Entities.Data;
 
-namespace ShoppingCartApi.Domain.Entities;
-
-public class Product : Aggregate<ProductData>
+namespace ShoppingCartApi.Domain.Entities
 {
-    private string _code;
-    private decimal _productPrice;
-
-    private Product(Id id, string code, decimal price):base(id)
+    public class Product : Aggregate<ProductData>
     {
-        _code = code;
-        _productPrice = price;
-    }
+        private string _code;
+        private decimal _productPrice;
 
-    public Product(Id id):base(id)
-    {
-    }
+        private Product(Id id, string code, decimal price):base(id)
+        {
+            _code = code;
+            _productPrice = price;
+        }
 
-    public override ProductData ToData()
-    {
-        return new ProductData(Id, _code, _productPrice);
-    }
+        public Product(Id id):base(id)
+        {
+        }
 
-    public override void Restore(ProductData data)
-    {
-        Id = data.Id;
-        _code = data.ProductCode;
-        _productPrice = data.ProductPrice;
-    }
+        public override ProductData ToData()
+        {
+            return new ProductData(Id, _code, _productPrice);
+        }
 
-    public static IEnumerable<ProductData> GetListOfProductsData(IEnumerable<Product> products)
-    {
-      return products.Select(product => new ProductData(product.Id,product._code,product._productPrice));
-    }
+        public override void Restore(ProductData data)
+        {
+            Id = data.Id;
+            _code = data.ProductCode;
+            _productPrice = data.ProductPrice;
+        }
 
-    public static IEnumerable<Product> GetListOfProducts(IEnumerable<ProductData> products)
-    {
-        return products.Select(product => new Product(product.Id,product.ProductCode,product.ProductPrice));
+        public static IEnumerable<ProductData> GetListOfProductsData(IEnumerable<Product> products)
+        {
+            return products.Select(product => new ProductData(product.Id,product._code,product._productPrice));
+        }
+
+        public static IEnumerable<Product> GetListOfProducts(IEnumerable<ProductData> products)
+        {
+            return products.Select(product => new Product(product.Id,product.ProductCode,product.ProductPrice));
+        }
     }
 }

@@ -3,23 +3,24 @@ using ShoppingCartApi.AppServices.UseCases;
 using ShoppingCartApi.Domain.Entities.Base;
 
 
-namespace ShoppingCartApp.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class CheckOutController : ControllerBase
+namespace ShoppingCartApp.Controllers
 {
-    private readonly CalculateCartPriceUseCase _calculateCartPriceUseCase;
-
-    public CheckOutController(
-        CalculateCartPriceUseCase calculateCartPriceUseCase)
+    [ApiController]
+    [Route("[controller]")]
+    public class CheckOutController : ControllerBase
     {
-        _calculateCartPriceUseCase = calculateCartPriceUseCase;
-    }
+        private readonly CalculateCartPriceUseCase _calculateCartPriceUseCase;
 
-    [HttpGet("GetCartTotal")]
-    public decimal GetCartTotal(Guid shoppingCartId)
-    {
-        return _calculateCartPriceUseCase.CalculateCartTotal(new Id(shoppingCartId));
+        public CheckOutController(
+            CalculateCartPriceUseCase calculateCartPriceUseCase)
+        {
+            _calculateCartPriceUseCase = calculateCartPriceUseCase;
+        }
+
+        [HttpGet("GetCartTotal")]
+        public decimal GetCartTotal(Guid shoppingCartId)
+        {
+            return _calculateCartPriceUseCase.CalculateCartTotal(new Id(shoppingCartId));
+        }
     }
 }

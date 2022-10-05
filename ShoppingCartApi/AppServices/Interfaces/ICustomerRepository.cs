@@ -1,8 +1,9 @@
 using ShoppingCartApi.Domain.Entities;
 
-namespace ShoppingCartApi.AppServices.Interfaces;
-
-public interface ICustomerRepository
+namespace ShoppingCartApi.AppServices.Interfaces
 {
-    public Customer GetUserByName(string name);
+    public interface ICustomerRepository
+    {
+        public Customer GetUserByName(string name);
+    }
 }

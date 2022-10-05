@@ -1,11 +1,12 @@
 using ShoppingCartApi.AppServices.Data;
 
-namespace ShoppingCartApi.Domain.Services;
-
-public class CartPriceService : ICartPriceService
+namespace ShoppingCartApi.Domain.Services
 {
-    public decimal CalculateCart(IEnumerable<CartProduct> products)
+    public class CartPriceService : ICartPriceService
     {
-        return products.Sum(item => item.ProductPrice);
+        public decimal CalculateCart(IEnumerable<CartProduct> products)
+        {
+            return products.Sum(item => item.ProductPrice);
+        }
     }
 }

@@ -1,9 +1,10 @@
-namespace ShoppingCartApi.Domain.Entities.Base;
-
-public record Id (Guid id)
+namespace ShoppingCartApi.Domain.Entities.Base
 {
-    public Id():this(Guid.NewGuid())
+    public record Id (Guid id)
     {
-    }
+        public Id():this(Guid.NewGuid())
+        {
+        }
     
+    }
 }

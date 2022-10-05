@@ -2,23 +2,24 @@ using ShoppingCartApi.AppServices.Interfaces;
 using ShoppingCartApi.Domain.Entities;
 using ShoppingCartApi.Infrastructure.Database;
 
-namespace ShoppingCartApi.Infrastructure.Repositories;
-
-public class CustomerRepository : ICustomerRepository
+namespace ShoppingCartApi.Infrastructure.Repositories
 {
-    private readonly InMemoryDatabase _database;
-
-    public CustomerRepository(InMemoryDatabase database)
+    public class CustomerRepository : ICustomerRepository
     {
-        _database = database;
-    }
+        private readonly InMemoryDatabase _database;
 
-    public Customer GetUserByName(string name)
-    {
-        var customer = new Customer(name);
+        public CustomerRepository(InMemoryDatabase database)
+        {
+            _database = database;
+        }
 
-        customer.Restore(_database.Customers.Single(c => c.Name==name));
+        public Customer GetUserByName(string name)
+        {
+            var customer = new Customer(name);
 
-        return customer;
+            customer.Restore(_database.Customers.Single(c => c.Name==name));
+
+            return customer;
+        }
     }
 }

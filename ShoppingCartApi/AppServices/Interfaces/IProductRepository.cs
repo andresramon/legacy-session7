@@ -1,8 +1,9 @@
 using ShoppingCartApi.Domain.Entities;
 
-namespace ShoppingCartApi.AppServices.Interfaces;
-
-public interface IProductRepository
+namespace ShoppingCartApi.AppServices.Interfaces
 {
-    public Product GetByCode(string productCode);
+    public interface IProductRepository
+    {
+        public Product GetByCode(string productCode);
+    }
 }

@@ -1,8 +1,9 @@
 using ShoppingCartApi.AppServices.Data;
 
-namespace ShoppingCartApi.Domain.Services;
-
-public interface ICartPriceService
+namespace ShoppingCartApi.Domain.Services
 {
-    decimal CalculateCart(IEnumerable<CartProduct> products);
+    public interface ICartPriceService
+    {
+        decimal CalculateCart(IEnumerable<CartProduct> products);
+    }
 }

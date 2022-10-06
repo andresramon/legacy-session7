@@ -21,13 +21,16 @@ namespace ShoppingCartTests
             this.customer = customer;
             IShoppingCartRepository cartRepository = A.Fake<IShoppingCartRepository>();
             ICustomerRepository customerRepository = A.Fake<ICustomerRepository>();
+            Customer customerOne = new Customer(customer);
         
-            ShoppingCart shoppingCart = new ShoppingCart(new Id(),new Customer(customer));
             CreateEmptyCartUseCase useCase = new CreateEmptyCartUseCase(cartRepository,customerRepository);
-            ShoppingCartData shoppingCartData = shoppingCart.ToData();
+            A.CallTo(() => customerRepository.GetUserByName(customer)).Returns(customerOne);
             useCase.CreateFor(customer);
-            
-            A.CallTo(() =>  cartRepository.Create(A<ShoppingCart>.That.Matches(cart => cart.ToData().Customer.Equals(shoppingCartData.Customer) && cart.ToData().Products.Equals(shoppingCartData.Products)))).MustHaveHappened();
+
+            A.CallTo(() =>
+                cartRepository.Create(A<ShoppingCart>.That.Matches(cart =>
+                    cart.ToData().Customer.Name.Equals(customerOne.ToData().Name)
+                  && !cart.ToData().Products.Any()))).MustHaveHappened();
             A.CallTo(() =>  customerRepository.GetUserByName(customer)).MustHaveHappened();
 
         }
@@ -62,4 +65,3 @@ namespace ShoppingCartTests
             useCase.CalculateCartTotal(id).Should().Be(price);
         }
     }
-}
